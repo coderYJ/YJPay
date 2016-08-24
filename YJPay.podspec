@@ -10,28 +10,21 @@ Pod::Spec.new do |s|
     DESC
 
     s.homepage			= "https://github.com/coderYJ/YJPay"
-    s.social_media_url   = "http://weibo.com/u/5348162268"
     s.license              = { :type => "MIT", :file => "LICENSE" }
     s.author			= { "coderYJ" => "wenyanjun1314@163.com"}
 
+    s.social_media_url   = "http://weibo.com/u/5348162268"
     s.source			= { :git => "https://github.com/coderYJ/YJPay.git", :tag => s.version }
-
     s.source_files		= "YJPay/*.{h,m}"
+    s.resources          = "YJPay/AlipaySDK.bundle"
     s.requires_arc		= true
 
 #   s.preserve_paths = "Pod"
-# s.ios.vendored_frameworks =  "Pod/RichAPM.framework"
+#   s.ios.vendored_frameworks =  "Pod/YJPay.framework"
 
-    s.frameworks = {
-        "SystemConfiguration",
-        "CoreTelephony",
-        "CoreText",
-        "QuartzCore",
-        "CoreGraphics",
-        "CFNetwork",
-        "CoreMotion"
-    }
-    s.libraries = "libz","libc++"
+    s.frameworks = "SystemConfiguration","CoreTelephony","CoreText","QuartzCore","CoreGraphics","CFNetwork","CoreMotion"
+
+    s.libraries = "z","c++"
     s.xcconfig = {
         "FRAMEWORK_SEARCH_PATHS" => "\"$(PODS_ROOT)/YJPay/AlipaySDK/**\"",
 # "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/YJPay/YJPay.framework\"",
